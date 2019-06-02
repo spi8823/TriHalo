@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriHalo", "TriHalo\TriHalo.csproj", "{0276113A-D5E6-42CB-AC85-8F01C6BA9E06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriHaloDatabase", "TriHaloDatabase\TriHaloDatabase.csproj", "{3D833378-B499-4420-9F77-C105332FB525}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0276113A-D5E6-42CB-AC85-8F01C6BA9E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0276113A-D5E6-42CB-AC85-8F01C6BA9E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0276113A-D5E6-42CB-AC85-8F01C6BA9E06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D833378-B499-4420-9F77-C105332FB525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D833378-B499-4420-9F77-C105332FB525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D833378-B499-4420-9F77-C105332FB525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D833378-B499-4420-9F77-C105332FB525}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
