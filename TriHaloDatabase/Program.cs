@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace TriHaloDatabase
 {
@@ -10,7 +11,10 @@ namespace TriHaloDatabase
 
             using(var context = new Kagami.KagamiContext())
             {
-                context.Individuals.Add(new Kagami.Individual() { Name = "hoge" });
+                //context.Database.EnsureDeleted();
+                context.Database.EnsureCreated();
+                context.Individuals.Add(new Kagami.Individual() { BirthYear = 1200 });
+                context.SaveChanges();
             }
         }
     }

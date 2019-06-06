@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TriHaloDatabase.Kagami;
 
-namespace TriHalo.Pages.Kagami
+namespace TriHalo.Pages.Kagami.Individual
 {
     public class CreateModel : PageModel
     {
@@ -24,7 +24,7 @@ namespace TriHalo.Pages.Kagami
         }
 
         [BindProperty]
-        public Individual Individual { get; set; }
+        public TriHaloDatabase.Kagami.Individual Individual { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {

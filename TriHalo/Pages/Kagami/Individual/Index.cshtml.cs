@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using TriHaloDatabase.Kagami;
 
-namespace TriHalo.Pages.Kagami
+namespace TriHalo.Pages.Kagami.Individual
 {
     public class IndexModel : PageModel
     {
@@ -18,7 +18,7 @@ namespace TriHalo.Pages.Kagami
             _context = context;
         }
 
-        public IList<Individual> Individual { get;set; }
+        public IList<TriHaloDatabase.Kagami.Individual> Individual { get;set; }
 
         public async Task OnGetAsync()
         {
