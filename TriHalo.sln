@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.28922.388
+VisualStudioVersion = 16.0.29123.89
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriHalo", "TriHalo\TriHalo.csproj", "{0276113A-D5E6-42CB-AC85-8F01C6BA9E06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriHalo.Server", "TriHalo.Server\TriHalo.Server.csproj", "{9DC1E6F5-9B5D-4E21-B035-5B7B801DD7D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriHaloDatabase", "TriHaloDatabase\TriHaloDatabase.csproj", "{3D833378-B499-4420-9F77-C105332FB525}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriHalo.Common", "TriHalo.Common\TriHalo.Common.csproj", "{59A30452-FDB8-4EEF-B4E3-BAC4D2B7CF84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriHalo.API", "TriHalo.API\TriHalo.API.csproj", "{E13034C1-A043-4143-844A-DAE447ADEAE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0276113A-D5E6-42CB-AC85-8F01C6BA9E06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0276113A-D5E6-42CB-AC85-8F01C6BA9E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0276113A-D5E6-42CB-AC85-8F01C6BA9E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0276113A-D5E6-42CB-AC85-8F01C6BA9E06}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D833378-B499-4420-9F77-C105332FB525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D833378-B499-4420-9F77-C105332FB525}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D833378-B499-4420-9F77-C105332FB525}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D833378-B499-4420-9F77-C105332FB525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DC1E6F5-9B5D-4E21-B035-5B7B801DD7D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DC1E6F5-9B5D-4E21-B035-5B7B801DD7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DC1E6F5-9B5D-4E21-B035-5B7B801DD7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DC1E6F5-9B5D-4E21-B035-5B7B801DD7D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A30452-FDB8-4EEF-B4E3-BAC4D2B7CF84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A30452-FDB8-4EEF-B4E3-BAC4D2B7CF84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A30452-FDB8-4EEF-B4E3-BAC4D2B7CF84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A30452-FDB8-4EEF-B4E3-BAC4D2B7CF84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E13034C1-A043-4143-844A-DAE447ADEAE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E13034C1-A043-4143-844A-DAE447ADEAE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E13034C1-A043-4143-844A-DAE447ADEAE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E13034C1-A043-4143-844A-DAE447ADEAE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5920054E-E0F8-459C-A7F7-22CC282B8042}
+		SolutionGuid = {49445C87-CD7A-4592-9B75-7AA891112380}
 	EndGlobalSection
 EndGlobal

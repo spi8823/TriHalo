@@ -1,0 +1,9 @@
+﻿@using TriHalo.Common
+@code
+{
+    [Parameter]
+    private Text Text { get; set; }
+}
+
+<input type="text" @bind="@Text.Original" />
+<input type="text" @bind="@Text.Ruby" />
