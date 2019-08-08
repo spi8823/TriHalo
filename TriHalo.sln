@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriHalo.Server", "TriHalo.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriHalo.Common", "TriHalo.Common\TriHalo.Common.csproj", "{59A30452-FDB8-4EEF-B4E3-BAC4D2B7CF84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriHalo.API", "TriHalo.API\TriHalo.API.csproj", "{E13034C1-A043-4143-844A-DAE447ADEAE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriHalo.API", "TriHalo.API\TriHalo.API.csproj", "{E13034C1-A043-4143-844A-DAE447ADEAE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -23,7 +23,7 @@ namespace TriHalo.API.Controllers
 
         // GET: api/Tsurugi
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Book>>> GetBook()
+        public async Task<ActionResult<List<Book>>> GetBook()
         {
             return await _context.Book.ToListAsync();
         }
@@ -78,7 +78,6 @@ namespace TriHalo.API.Controllers
         {
             _context.Book.Add(book);
             await _context.SaveChangesAsync();
-
             return CreatedAtAction("GetBook", new { id = book.ID }, book);
         }
 

@@ -19,21 +19,6 @@ namespace TriHalo.API.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("TriHalo.Common.Text", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Original");
-
-                    b.Property<string>("Ruby");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Text");
-                });
-
             modelBuilder.Entity("TriHalo.Common.Tsurugi.Book", b =>
                 {
                     b.Property<int>("ID")
@@ -42,11 +27,7 @@ namespace TriHalo.API.Migrations
 
                     b.Property<string>("ReferenceURL");
 
-                    b.Property<int?>("TitleID");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("TitleID");
 
                     b.ToTable("Book");
                 });
@@ -63,13 +44,9 @@ namespace TriHalo.API.Migrations
 
                     b.Property<string>("ReferenceURL");
 
-                    b.Property<int?>("TitleID");
-
                     b.HasKey("ID");
 
                     b.HasIndex("ParentID");
-
-                    b.HasIndex("TitleID");
 
                     b.ToTable("Chapter");
                 });
@@ -84,22 +61,32 @@ namespace TriHalo.API.Migrations
 
                     b.Property<int?>("ParentID");
 
-                    b.Property<int?>("TextID");
-
                     b.HasKey("ID");
 
                     b.HasIndex("ParentID");
-
-                    b.HasIndex("TextID");
 
                     b.ToTable("Sentence");
                 });
 
             modelBuilder.Entity("TriHalo.Common.Tsurugi.Book", b =>
                 {
-                    b.HasOne("TriHalo.Common.Text", "Title")
-                        .WithMany()
-                        .HasForeignKey("TitleID");
+                    b.OwnsOne("TriHalo.Common.Text", "Title", b1 =>
+                        {
+                            b1.Property<int>("BookID")
+                                .ValueGeneratedOnAdd()
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<string>("Original");
+
+                            b1.Property<string>("Ruby");
+
+                            b1.HasKey("BookID");
+
+                            b1.ToTable("Book");
+
+                            b1.WithOwner()
+                                .HasForeignKey("BookID");
+                        });
                 });
 
             modelBuilder.Entity("TriHalo.Common.Tsurugi.Chapter", b =>
@@ -108,9 +95,23 @@ namespace TriHalo.API.Migrations
                         .WithMany("Chapters")
                         .HasForeignKey("ParentID");
 
-                    b.HasOne("TriHalo.Common.Text", "Title")
-                        .WithMany()
-                        .HasForeignKey("TitleID");
+                    b.OwnsOne("TriHalo.Common.Text", "Title", b1 =>
+                        {
+                            b1.Property<int>("ChapterID")
+                                .ValueGeneratedOnAdd()
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<string>("Original");
+
+                            b1.Property<string>("Ruby");
+
+                            b1.HasKey("ChapterID");
+
+                            b1.ToTable("Chapter");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ChapterID");
+                        });
                 });
 
             modelBuilder.Entity("TriHalo.Common.Tsurugi.Sentence", b =>
@@ -119,9 +120,23 @@ namespace TriHalo.API.Migrations
                         .WithMany("Sentences")
                         .HasForeignKey("ParentID");
 
-                    b.HasOne("TriHalo.Common.Text", "Text")
-                        .WithMany()
-                        .HasForeignKey("TextID");
+                    b.OwnsOne("TriHalo.Common.Text", "Text", b1 =>
+                        {
+                            b1.Property<int>("SentenceID")
+                                .ValueGeneratedOnAdd()
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<string>("Original");
+
+                            b1.Property<string>("Ruby");
+
+                            b1.HasKey("SentenceID");
+
+                            b1.ToTable("Sentence");
+
+                            b1.WithOwner()
+                                .HasForeignKey("SentenceID");
+                        });
                 });
 #pragma warning restore 612, 618
         }
