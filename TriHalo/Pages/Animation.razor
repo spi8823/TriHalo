@@ -1,0 +1,33 @@
+﻿@page "/Animation"
+
+<p class="mt-2" style="@Style">残念でした！</p>
+<button @onclick="Animate">調子に乗る</button>
+
+@code{
+    private double FontSize { get; set; } = 10;
+    private string Style { get; set; } = "";
+
+    async void Animate()
+    {
+        var time = 0.0;
+        var max = 10;
+        var min = 4;
+        int delayTime = 10;
+        var speed = 10;
+
+        while(true)
+        {
+            FontSize = Lerp(Math.Cos(time * speed) / 2 + 0.5, min, max);
+            Style = $"font-size:{FontSize.ToString("0.0")}em";
+
+            await Task.Delay(delayTime);
+            StateHasChanged();
+            time += delayTime / 1000.0;
+        }
+    }
+
+    double Lerp(double value, double min, double max)
+    {
+        return min + (max - min) * value;
+    }
+}

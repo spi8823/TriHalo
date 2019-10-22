@@ -1,0 +1,14 @@
+﻿@page "/"
+
+<h1>@Text</h1>
+<button @onclick="SetText">click this button</button>
+
+@code
+{
+    string Text { get; set; } = "Empty";
+
+    void SetText()
+    {
+        Text = "Hallo World";
+    }
+}

@@ -1,0 +1,48 @@
+﻿@page "/Ichinomiya"
+@inject Data.MyService myService
+
+<Ichinomiya Value="EdittingIchinomiya" ForEdit="true"/>
+<button @onclick="AddData">Add</button>
+<button @onclick="GetDatas">GetDatas</button>
+<button @onclick="ClearDatas">Clear</button>
+
+@if (datas != null)
+{
+    foreach (var ichinomiya in datas)
+    {
+    <Ichinomiya Value="ichinomiya" ForEdit="false"/>
+    <hr />
+    }
+}
+
+@code {
+    List<Data.Ichinomiya> datas { get; set; } = new List<Data.Ichinomiya>();
+    bool flag = false;
+    Data.Ichinomiya EdittingIchinomiya { get; set; } = new Data.Ichinomiya();
+
+    async Task AddData()
+    {
+        await myService.AddIchinomiya(EdittingIchinomiya);
+        EdittingIchinomiya = new Data.Ichinomiya();
+        await GetDatas();
+    }
+
+    async Task GetDatas()
+    {
+        if(flag)
+        {
+            return;
+        }
+
+        flag = true;
+        datas = await myService.GetIchinomiyas();
+        StateHasChanged();
+        flag = false;
+    }
+
+    async Task ClearDatas()
+    {
+        await myService.ClearIchinomiyas();
+        await GetDatas();
+    }
+}

@@ -1,0 +1,43 @@
+﻿<div class="form-group">
+    <label>ID: </label>
+    @if(!ForEdit)
+    {
+        <label>@Value.ID</label>
+    }
+    else
+    {
+        <input type="text" @bind="Value.ID"/>
+    }
+</div>
+
+<div class="form-group">
+    <label>Name: </label>
+    @if (!ForEdit)
+    {
+        <label>@Value.Name</label>
+    }
+    else
+    {
+        <input type="text" @bind="Value.Name" />
+    }
+</div>
+
+<div class="form-group">
+    <label>Location: </label>
+    @if (!ForEdit)
+    {
+        <label>@Value.Location</label>
+    }
+    else
+    {
+        <input type="text" @bind="Value.Location" />
+    }
+</div>
+
+@code {
+    [Parameter]
+    public Data.Ichinomiya Value { get; set; }
+
+    [Parameter]
+    public bool ForEdit { get; set; } = false;
+}

@@ -1,0 +1,17 @@
+﻿@page "/TestComponent"
+<button @onclick="Multiple">増やす</button>
+
+@for(var i = 0;i < Math.Pow(2, Count);i++)
+{
+    <Dorayaki Number="i + 1"/>
+}
+
+@code
+{
+    private int Count = 0;
+
+    void Multiple()
+    {
+        Count++;
+    }
+}
